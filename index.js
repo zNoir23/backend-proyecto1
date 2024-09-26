@@ -11,18 +11,15 @@ const app = express();
 // Configuracion de CORS
 app.use(cors())
 
+// Lectura y parseo del body
+app.use(express.json())
+
 // Base de datos
 dbConnection();
 
 // Rutas
-app.get('/', (req, res) => {
-
-    res.json({
-        ok: true,
-        msg: 'Hola'
-    })
-
-});
+app.use('/api/usuarios', require('./routes/usuarios'))
+app.use('/api/login', require('./routes/auth'))
 
 
 // Lo correré en el puerto 3006
