@@ -21,6 +21,9 @@ dbConnection();
 app.use('/api/usuarios', require('./routes/usuarios'))
 app.use('/api/login', require('./routes/auth'))
 
+// Productos
+app.use('/api/productos', require('./routes/productos'));
+
 
 // Lo correré en el puerto 3006
 app.listen(process.env.PORT, () =>{
