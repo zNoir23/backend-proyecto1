@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
   nombre: { type: String, required: true },
   descripcion: String,
-  categoria: { type: String, required: true },
+  categoria: { type: String, required: true, enum: ['aseo', 'alimento', 'mecatos', 'bebidas'] },
   precio: { type: Number, required: true },
   stock: { type: Number, required: true },
 });

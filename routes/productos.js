@@ -2,6 +2,7 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares/validar-campos'); // Asegúrate de que este middleware exista
 const Producto = require('../models/productos'); // Asegúrate de que el nombre y ruta sean correctos
+const {validarJWT} = require ('../middlewares/validar-jwt')
 
 
 const router = Router();
